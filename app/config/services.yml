@@ -6,6 +6,11 @@ services:
         class: AppBundle\Util\UpcomingEventsFetcher
         arguments: ["@buzz_browser"]
 
+    event_manager:
+        class: AppBundle\Manager\EventManager
+        arguemnts:
+            - @=service('doctrine.orm.default_entity_manager').getRepository('AppBundle:UpcomingEventSet')
+
     event_admin:
         class: AppBundle\Admin\EventAdmin
         arguments: [~, AppBundle\Entity\Event, SonataAdminBundle:CRUD]

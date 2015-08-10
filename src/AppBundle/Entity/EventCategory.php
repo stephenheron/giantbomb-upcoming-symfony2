@@ -4,10 +4,13 @@ namespace AppBundle\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
+use JMS\Serializer\Annotation\ExclusionPolicy;
+use JMS\Serializer\Annotation\Exclude;
 
 /**
  * @ORM\Entity
  * @ORM\Table(name="event_category")
+ * @ExclusionPolicy("none")
  */
 class EventCategory
 {
@@ -30,6 +33,7 @@ class EventCategory
 
     /**
      * @ORM\OneToMany(targetEntity="Event", mappedBy="category")
+     * @Exclude
      **/
     private $events;
 

@@ -3,10 +3,13 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use JMS\Serializer\Annotation\ExclusionPolicy;
+use JMS\Serializer\Annotation\Exclude;
 
 /**
  * @ORM\Entity
  * @ORM\Table(name="event")
+ * @ExclusionPolicy("none")
  */
 class Event
 {
@@ -51,6 +54,7 @@ class Event
     /**
      * @ORM\ManyToOne(targetEntity="UpcomingEventSet", inversedBy="events")
      * @ORM\JoinColumn(name="upcoming_event_set_id", referencedColumnName="id", onDelete="SET NULL")
+     * @Exclude
      **/
     private $upcomingEventSet;
 

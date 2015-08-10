@@ -8,6 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * @ORM\Entity
  * @ORM\Table(name="upcoming_event_set")
+ * @ORM\Entity(repositoryClass="AppBundle\Entity\UpcomingEventSetRepository")
  */
 class UpcomingEventSet
 {
@@ -27,6 +28,11 @@ class UpcomingEventSet
      * @ORM\OneToMany(targetEntity="Event", mappedBy="upcoming_event_set")
      **/
     private $events;
+
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $active;
 
     function __construct()
     {
@@ -79,6 +85,22 @@ class UpcomingEventSet
     public function setEvents($events)
     {
         $this->events = $events;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getActive()
+    {
+        return $this->active;
+    }
+
+    /**
+     * @param mixed $active
+     */
+    public function setActive($active)
+    {
+        $this->active = $active;
     }
 
 }
