@@ -1,10 +1,7 @@
 services:
-    buzz_browser:
-        class: Buzz\Browser
 
     upcoming_events_fetcher:
         class: AppBundle\Util\UpcomingEventsFetcher
-        arguments: ["@buzz_browser"]
 
     event_manager:
         class: AppBundle\Manager\EventManager
