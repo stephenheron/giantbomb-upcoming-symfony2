@@ -33,8 +33,10 @@ class EventCategory
      **/
     private $events;
 
-    function __construct()
+    function __construct($name, $slug)
     {
+        $this->setName($name);
+        $this->setSlug($slug);
         $this->events = new ArrayCollection();
     }
 
