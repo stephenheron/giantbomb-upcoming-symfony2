@@ -2,6 +2,7 @@ services:
 
     upcoming_events_fetcher:
         class: AppBundle\Util\UpcomingEventsFetcher
+        arguments: ['@file_locator']
 
     event_manager:
         class: AppBundle\Manager\EventManager
