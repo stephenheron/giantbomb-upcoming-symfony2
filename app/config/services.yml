@@ -1,9 +1,7 @@
-# Learn more about services, parameters and containers at
-# http://symfony.com/doc/current/book/service_container.html
-parameters:
-#    parameter_name: value
-
 services:
-#    service_name:
-#        class: AppBundle\Directory\ClassName
-#        arguments: ["@another_service_name", "plain_value", "%parameter_name%"]
+    buzz_browser:
+        class: Buzz\Browser
+
+    upcoming_events_fetcher:
+        class: AppBundle\Util\UpcomingEventsFetcher
+        arguments: ["@buzz_browser"]
