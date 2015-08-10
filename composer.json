@@ -22,7 +22,9 @@
         "incenteev/composer-parameter-handler": "~2.0",
         "electrolinux/phpquery": "^0.9.6",
         "kriswallsmith/buzz": "^0.15.0",
-        "doctrine/doctrine-migrations-bundle": "^1.0"
+        "doctrine/doctrine-migrations-bundle": "^1.0",
+        "sonata-project/admin-bundle": "^2.3",
+        "sonata-project/doctrine-orm-admin-bundle": "^2.3"
     },
     "require-dev": {
         "sensio/generator-bundle": "~2.3"

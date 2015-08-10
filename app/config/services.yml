@@ -5,3 +5,22 @@ services:
     upcoming_events_fetcher:
         class: AppBundle\Util\UpcomingEventsFetcher
         arguments: ["@buzz_browser"]
+
+    event_admin:
+        class: AppBundle\Admin\EventAdmin
+        arguments: [~, AppBundle\Entity\Event, SonataAdminBundle:CRUD]
+        tags:
+            - {name: sonata.admin, manager_type: orm, group: Admin, label: Event}
+
+    event_category_admin:
+        class: AppBundle\Admin\EventCategoryAdmin
+        arguments: [~, AppBundle\Entity\EventCategory, SonataAdminBundle:CRUD]
+        tags:
+            - {name: sonata.admin, manager_type: orm, group: Admin, label: Event Category}
+
+    upcoming_event_set_admin:
+        class: AppBundle\Admin\UpcomingEventSetAdmin
+        arguments: [~, AppBundle\Entity\UpcomingEventSet, SonataAdminBundle:CRUD]
+        tags:
+            - {name: sonata.admin, manager_type: orm, group: Admin, label: Upcoming Event Set}
+
