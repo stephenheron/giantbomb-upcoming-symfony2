@@ -42,6 +42,7 @@ class UpcomingEventsFetcher
     {
         $eventEntity = new Event();
         $eventEntity->setTitle($event['title']);
+        $eventEntity->setImageUrl($event['imageUrl']);
 
         return $eventEntity;
     }

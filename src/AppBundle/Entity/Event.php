@@ -41,6 +41,11 @@ class Event
     private $description;
 
     /**
+     * @ORM\Column(type="string", nullable=true)
+     */
+    private $imageUrl;
+
+    /**
      * @ORM\Column(type="boolean")
      */
     private $premium;
@@ -184,6 +189,22 @@ class Event
     public function setUpcomingEventSet($upcomingEventSet)
     {
         $this->upcomingEventSet = $upcomingEventSet;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getImageUrl()
+    {
+        return $this->imageUrl;
+    }
+
+    /**
+     * @param mixed $imageUrl
+     */
+    public function setImageUrl($imageUrl)
+    {
+        $this->imageUrl = $imageUrl;
     }
 
 }
